@@ -52,16 +52,16 @@
 
 #### 3. /bin/www 파일에서
 
-    - 상용일 경우 PORT를 3000, 3001로 변경
-    - 개발일 경우 PORT를 4000, 4001로 변경
+-   상용일 경우 PORT를 3000, 3001로 변경
+-   개발일 경우 PORT를 4000, 4001로 변경
 
 #### 4. nodemon 사용할 경우
 
-    - package.json에서 수정
+-   package.json에서 수정
 
-    <pre><code>"scripts": {
-        "start": "nodemon ./bin/www"
-    }</code></pre>
+<pre><code>"scripts": {
+    "start": "nodemon ./bin/www"
+}</code></pre>
 
 ### Project Run
 
