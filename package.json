@@ -1,6 +1,6 @@
 {
   "name": "bo-api-starter",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "블록오디세이에서 사용하는 api starter입니다.",
   "keywords": [
     "blockodyssey"
