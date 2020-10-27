@@ -1,15 +1,10 @@
-# express-boiler-plate
+# bo-api-starter
 
-:smiley: Express를 위한 Boiler Plate입니다. :smiley:
+:smiley: 블록오디세이에 맞춘 Express Api Starter입니다. :smiley:
 
 ## Project Installation
-
-
-### 전역으로 설치
-<pre><code> $ sudo npm install -g bo-api-starter </code></pre>
-
-### 전역으로 설치된 패키지를 실행하여 프로젝트 생성
 <pre><code> $ npx bo-api-starter "project-name" </code></pre>
+
 
 ## Project Features
 
