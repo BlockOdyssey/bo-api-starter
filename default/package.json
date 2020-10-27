@@ -1,0 +1,42 @@
+{
+  "name": "@blockodyssey/api-starter",
+  "version": "0.0.1",
+  "description": "블록오디세이에서 사용하는 api starter입니다.",
+  "keywords": [
+    "blockodyssey"
+  ],
+  "author": "blockodyssey",
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BlockOdyssey/express-boiler-plate.git"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.778.0",
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^8.2.0",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "express-session": "^1.17.1",
+    "fetch": "^1.1.0",
+    "fs": "0.0.1-security",
+    "http": "0.0.1-security",
+    "http-errors": "~1.6.3",
+    "http-status-codes": "^2.1.4",
+    "https": "^1.0.0",
+    "morgan": "~1.9.1",
+    "mysql": "^2.18.1",
+    "node-fetch": "^2.6.1",
+    "qs": "^6.9.4",
+    "session": "^0.1.0",
+    "session-file-store": "^1.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
