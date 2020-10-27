@@ -32,13 +32,12 @@
 ### Project Environment Setup
 
 1. .env.example 파일을 복사하여 .env 파일을 생성
-
-<pre><code>// example을 실제 값으로 변경 
-MYSQL_USER=example   
-MYSQL_DATABASE=example
-S3_BUCKET=example
-S3_ACCESSKEYID=EXAMPLE
-</code></pre>
+ <pre><code>// example을 실제 값으로 변경 
+ MYSQL_USER=example   
+ MYSQL_DATABASE=example
+ S3_BUCKET=example
+ S3_ACCESSKEYID=EXAMPLE
+ </code></pre>
 
 2. config.js 파일에서 .env 파일의 경로를 수정
 
@@ -69,25 +68,13 @@ S3_ACCESSKEYID=EXAMPLE
 
 ## Project Flow
 
-### 1. app.js
-
-    session 설정, 미들웨어 추가, 라우트 추가
-
-### 2. middleware
-
-    앱과 웹 미들웨어 설정
-
-### 3. routes
-
-    앱과 웹 router(request, response) 작성
-
-### 4. service
-
-    Business Logic 작성
-
-### 5. query
-
-    SQL Query 작성
+| 순서 | 파일 / 폴더 |                   기능                    |
+| :--: | :---------: | :---------------------------------------: |
+|  1   |   app.js    | session 설정, middleware 추가, route 추가 |
+|  2   | middleware  |         APP & WEB middleware 설정         |
+|  3   |   routes    | APP & WEB router(request, response) 작성  |
+|  4   |   service   |            Business Logic 작성            |
+|  5   |    query    |              SQL Query 작성               |
 
 ## Project Structure
 
