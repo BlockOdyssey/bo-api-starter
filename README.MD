@@ -31,7 +31,8 @@
 
 ### Project Environment Setup
 
-1. .env.example 파일을 복사하여 .env 파일을 생성
+#### 1. .env.example 파일을 복사하여 .env 파일을 생성
+
  <pre><code>// example을 실제 값으로 변경 
  MYSQL_USER=example   
  MYSQL_DATABASE=example
@@ -39,7 +40,7 @@
  S3_ACCESSKEYID=EXAMPLE
  </code></pre>
 
-2. config.js 파일에서 .env 파일의 경로를 수정
+#### 2. config.js 파일에서 .env 파일의 경로를 수정
 
 <pre><code>require("dotenv").config({
     path: (function () {
@@ -49,12 +50,12 @@
 });
 </code></pre>
 
-3. /bin/www 파일에서
+#### 3. /bin/www 파일에서
 
     - 상용일 경우 PORT를 3000, 3001로 변경
     - 개발일 경우 PORT를 4000, 4001로 변경
 
-4. nodemon 사용할 경우
+#### 4. nodemon 사용할 경우
 
     - package.json에서 수정
 
