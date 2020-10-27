@@ -6,7 +6,7 @@
 ## Project Features
 
 -   **Server** : [Express](https://expressjs.com/ "expressjs")
--   **Database** : [MySQL](https://github.com/mysqljs/mysql#readme, "mysql")
+-   **Database** : [MySQL](https://github.com/mysqljs/mysql#readme "mysql")
 -   **Session** : [express-session](https://github.com/expressjs/session#readme "express-session"), [session-file-store](https://github.com/valery-barysok/session-file-store "session-file-store")
 -   **URL + Responses** : [node-fetch](https://github.com/node-fetch/node-fetch "node-fetch")
 -   **HTTP Status** : [http-status-codes](https://github.com/prettymuchbryce/http-status-codes#readme "http-status-codes")
