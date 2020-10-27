@@ -1,18 +1,18 @@
 # bo-api-starter
 
 :smiley: 블록오디세이에 맞춘 Express Api Starter입니다. :smiley:  
-:bangbang: [프로젝트 설치 방법](https://github.com/BlockOdyssey/bo-api-starter#project-installation, "project-installation") & [사용 설명서](https://github.com/BlockOdyssey/bo-api-starter#usage-and-getting-started, "usage") :bangbang:
+:bangbang: [프로젝트 설치 방법](https://github.com/BlockOdyssey/bo-api-starter#project-installation "project-installation") & [사용 설명서](https://github.com/BlockOdyssey/bo-api-starter#usage-and-getting-started "usage") :bangbang:
 
 ## Project Features
 
--   **Server** : [Express](https://expressjs.com/, "expressjs")
+-   **Server** : [Express](https://expressjs.com/ "expressjs")
 -   **Database** : [MySQL](https://github.com/mysqljs/mysql#readme, "mysql")
--   **Session** : [express-session](https://github.com/expressjs/session#readme, "express-session"), [session-file-store](https://github.com/valery-barysok/session-file-store, "session-file-store")
--   **URL + Responses** : [node-fetch](https://github.com/node-fetch/node-fetch, "node-fetch")
--   **HTTP Status** : [http-status-codes](https://github.com/prettymuchbryce/http-status-codes#readme, "http-status-codes")
--   **AWS SDK** : [aws-sdk](https://github.com/aws/aws-sdk-js, "aws-sdk")
--   **Environment Variables** : [dotenv](https://github.com/motdotla/dotenv#readme, "dotenv")
--   **Only Development** : [nodemon](https://nodemon.io/, "nodemon")
+-   **Session** : [express-session](https://github.com/expressjs/session#readme "express-session"), [session-file-store](https://github.com/valery-barysok/session-file-store "session-file-store")
+-   **URL + Responses** : [node-fetch](https://github.com/node-fetch/node-fetch "node-fetch")
+-   **HTTP Status** : [http-status-codes](https://github.com/prettymuchbryce/http-status-codes#readme "http-status-codes")
+-   **AWS SDK** : [aws-sdk](https://github.com/aws/aws-sdk-js "aws-sdk")
+-   **Environment Variables** : [dotenv](https://github.com/motdotla/dotenv#readme "dotenv")
+-   **Only Development** : [nodemon](https://nodemon.io/ "nodemon")
 
 ## Project Installation
 
