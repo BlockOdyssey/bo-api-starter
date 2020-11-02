@@ -37,8 +37,7 @@
  MYSQL_USER=example   
  MYSQL_DATABASE=example
  S3_BUCKET=example
- S3_ACCESSKEYID=EXAMPLE
- </code></pre>
+ S3_ACCESSKEYID=EXAMPLE</code></pre>
 
 #### 2. config.js 파일에서 .env 파일의 경로를 수정
 
@@ -67,6 +66,85 @@
 
  <pre><code>$ npm start </code></pre>
 
+## HTTP STATUS CODES 사용 가이드라인
+
+### HTTP STATUS: 200
+
+> 데이터 조회, 수정, 삭제 성공 (GET, PUT, DELETE 성공)
+
+```javascript
+// SAMPLE CODE
+import { StatusCodes } from "http-status-codes";
+
+response.status(StatusCodes.OK).send(data);
+```
+
+### HTTP STATUS: 201
+
+> 새로운 데이터 생성 성공 (POST 성공)
+
+```javascript
+// SAMPLE CODE
+import { StatusCodes } from "http-status-codes";
+
+response.status(StatusCodes.CREATED).json({ result: "SUCCESS", message: "데이터를 입력하였습니다." });
+```
+
+### HTTP STATUS: 401
+
+> 인증이 필요한 경우 (TOKEN REQUIRED / TOKEN EXPIRED)
+
+```javascript
+// SAMPLE CODE
+import { StatusCodes } from "http-status-codes";
+
+response.status(StatusCodes.UNAUTHORIZED).json({ result: "FAIL", message: "유효한 토큰이 아닙니다." });
+```
+
+### HTTP STATUS: 403
+
+> 인증되었지만 권한이 없을 때
+
+```javascript
+// SAMPLE CODE
+import { StatusCodes } from "http-status-codes";
+
+response.status(StatusCodes.FORBIDDEN).json({ result: "FAIL", message: "권한이 없습니다." });
+```
+
+### HTTP STATUS: 409
+
+> DATABASE에 데이터가 삽입/수정/삭제 또는 조회할 수 없을 경우
+
+```javascript
+// SAMPLE CODE
+import { StatusCodes } from "http-status-codes";
+
+response.status(StatusCodes.CONFLICT).json({ result: "FAIL", message: "정상적으로 처리되지 않았습니다." });
+```
+
+### HTTP STATUS: 422
+
+> 올바른 입력값이 아닌 경우 (Invalid User Input)
+
+```javascript
+// SAMPLE CODE
+import { StatusCodes } from "http-status-codes";
+
+response.status(StatusCodes.UNPROCESSABLE_ENTITY).json({ result: "EMPTY", message: "비밀번호를 입력해주세요." });
+```
+
+### HTTP STATUS: 500
+
+> 내부 서버 에러
+
+```javascript
+// SAMPLE CODE
+import { StatusCodes } from "http-status-codes";
+
+response.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ result: "ERROR", message: "일시적으로 에러가 발생하였습니다. 잠시 후에 다시 시도해주세요." });
+```
+
 ## Project Flow
 
 | 순서 | 파일 / 폴더 |                   기능                    |
@@ -93,12 +171,12 @@
 │   ├── app
 │   │   └── mw.js
 │   └── web
-│       └── mw.js
+│   └── mw.js
 ├── package-lock.json
 ├── package.json
 ├── public
 │   └── stylesheets
-│       └── style.css
+│   └── style.css
 ├── query                   # SQL Query
 │   └── users.js
 ├── routes
@@ -106,11 +184,10 @@
 │   │   ├── index.js
 │   │   └── users.js
 │   └── web
-│       ├── index.js
-│       └── users.js
+│   ├── index.js
+│   └── users.js
 ├── service                 # Business Logic
-    ├── index.js
-    └── users
-        └── findUser.js
-
+   ├── index.js
+   └── users
+   └── findUser.js
 ```

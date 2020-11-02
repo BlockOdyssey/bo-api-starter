@@ -31,15 +31,15 @@
 
 ### Project Environment Setup
 
-1. .env.example 파일을 복사하여 .env 파일을 생성
+#### 1. .env.example 파일을 복사하여 .env 파일을 생성
+
  <pre><code>// example을 실제 값으로 변경 
  MYSQL_USER=example   
  MYSQL_DATABASE=example
  S3_BUCKET=example
- S3_ACCESSKEYID=EXAMPLE
- </code></pre>
+ S3_ACCESSKEYID=EXAMPLE</code></pre>
 
-2. config.js 파일에서 .env 파일의 경로를 수정
+#### 2. config.js 파일에서 .env 파일의 경로를 수정
 
 <pre><code>require("dotenv").config({
     path: (function () {
@@ -49,22 +49,100 @@
 });
 </code></pre>
 
-3. /bin/www 파일에서
+#### 3. /bin/www 파일에서
 
-    - 상용일 경우 PORT를 3000, 3001로 변경
-    - 개발일 경우 PORT를 4000, 4001로 변경
+-   상용일 경우 PORT를 3000, 3001로 변경
+-   개발일 경우 PORT를 4000, 4001로 변경
 
-4. nodemon 사용할 경우
+#### 4. nodemon 사용할 경우
 
-    - package.json에서 수정
+-   package.json에서 수정
 
-    <pre><code>"scripts": {
-        "start": "nodemon ./bin/www"
-    }</code></pre>
+<pre><code>"scripts": {
+    "start": "nodemon ./bin/www"
+}</code></pre>
 
 ### Project Run
 
  <pre><code>$ npm start </code></pre>
+
+## HTTP STATUS CODES 사용 가이드라인
+
+### HTTP STATUS: 200
+
+> 데이터 조회, 수정, 삭제 성공 (GET, PUT, DELETE 성공)
+
+```javascript
+import { StatusCodes } from "http-status-codes";
+
+response.status(StatusCodes.OK).send(data);
+```
+
+### HTTP STATUS: 201
+
+> 새로운 데이터 생성 성공 (POST 성공)
+
+```javascript
+// SAMPLE CODE
+import { StatusCodes } from "http-status-codes";
+
+response.status(StatusCodes.CREATED).json({ result: "SUCCESS", message: "데이터를 입력하였습니다." });
+```
+
+### HTTP STATUS: 401
+
+> 인증이 필요한 경우 (TOKEN REQUIRED / TOKEN EXPIRED)
+
+```javascript
+// SAMPLE CODE
+import { StatusCodes } from "http-status-codes";
+
+response.status(StatusCodes.UNAUTHORIZED).json({ result: "FAIL", message: "유효한 토큰이 아닙니다." });
+```
+
+### HTTP STATUS: 403
+
+> 인증되었지만 권한이 없을 때
+
+```javascript
+// SAMPLE CODE
+import { StatusCodes } from "http-status-codes";
+
+response.status(StatusCodes.FORBIDDEN).json({ result: "FAIL", message: "권한이 없습니다." });
+```
+
+### HTTP STATUS: 409
+
+> DATABASE에 데이터가 삽입/수정/삭제 또는 조회할 수 없을 경우
+
+```javascript
+// SAMPLE CODE
+import { StatusCodes } from "http-status-codes";
+
+response.status(StatusCodes.CONFLICT).json({ result: "FAIL", message: "정상적으로 처리되지 않았습니다." });
+```
+
+### HTTP STATUS: 422
+
+> 올바른 입력값이 아닌 경우 (Invalid User Input)
+
+```javascript
+// SAMPLE CODE
+import { StatusCodes } from "http-status-codes";
+
+response.status(StatusCodes.UNPROCESSABLE_ENTITY).json({ result: "EMPTY", message: "비밀번호를 입력해주세요." });
+```
+
+### HTTP STATUS: 500
+
+> 내부 서버 에러
+
+```javascript
+// SAMPLE CODE
+import { StatusCodes } from "http-status-codes";
+
+response.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ result: "ERROR", message: "일시적으로 에러가 발생하였습니다. 잠시 후에 다시 시도해주세요." });
+```
 
 ## Project Flow
 
@@ -92,12 +170,12 @@
 │   ├── app
 │   │   └── mw.js
 │   └── web
-│       └── mw.js
+│   └── mw.js
 ├── package-lock.json
 ├── package.json
 ├── public
 │   └── stylesheets
-│       └── style.css
+│   └── style.css
 ├── query                   # SQL Query
 │   └── users.js
 ├── routes
@@ -105,11 +183,10 @@
 │   │   ├── index.js
 │   │   └── users.js
 │   └── web
-│       ├── index.js
-│       └── users.js
+│   ├── index.js
+│   └── users.js
 ├── service                 # Business Logic
-    ├── index.js
-    └── users
-        └── findUser.js
-
+   ├── index.js
+   └── users
+   └── findUser.js
 ```
