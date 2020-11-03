@@ -167,27 +167,26 @@ response.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ result: "ERROR", messa
 │   ├── cert.crt
 │   └── key.key
 ├── config.js               # MySQL, AWS, 환경변수 설정
-├── middleware              # Middleware
-│   ├── app
+├── middleware              # MIDDLEWARE 설정
+│   ├── app                 # APP
 │   │   └── mw.js
-│   └── web
-│   └── mw.js
-├── package-lock.json
+│   └── web                 # WEB
+│       └── mw.js
 ├── package.json
 ├── public
 │   └── stylesheets
-│   └── style.css
+│       └── style.css
 ├── query                   # SQL Query
 │   └── users.js
 ├── routes
-│   ├── app
+│   ├── app                 # APP
 │   │   ├── index.js
 │   │   └── users.js
-│   └── web
-│   ├── index.js
-│   └── users.js
-├── service                 # Business Logic
-   ├── index.js
-   └── users
-   └── findUser.js
+│   └── web                 # WEB
+│       ├── index.js
+│       └── users.js
+└── service                 # Business Logic
+    ├── index.js
+    └── users
+        └── findUser.js
 ```
